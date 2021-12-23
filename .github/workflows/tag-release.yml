@@ -10,7 +10,7 @@ on:
 
 jobs:
   tag-release:
-    #if: ${{ env.GITHUB_REPOSITORY == 'johngmyers/testactions' }}
+    if: ${{ env.GITHUB_REPOSITORY == 'johngmyers/testactions' }}
     runs-on: ubuntu-20.04
 
     permissions:
