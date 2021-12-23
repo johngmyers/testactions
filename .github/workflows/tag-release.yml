@@ -1,0 +1,21 @@
+name: tag-release
+
+on:
+  push:
+    branches:
+      - master
+      - 'release-*'
+    paths:
+      - version.go
+
+jobs:
+  tag-release:
+    #if: ${{ env.GITHUB_REPOSITORY == 'johngmyers/testactions' }}
+    runs-on: ubuntu-20.04
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: hack/tag-release.sh
